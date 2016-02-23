@@ -1,7 +1,7 @@
 (function () {
 	'use-strict';
 
-	angular.module('jkuri.gallery', []).directive('ngGallery', ngGallery);
+	angular.module('md1world.gallery', []).directive('ngGallery', ngGallery);
 
 	ngGallery.$inject = ['$document', '$timeout', '$q', '$templateCache'];
 
@@ -31,7 +31,7 @@
 		$templateCache.put(template_url,
 			'<div class="{{ baseClass }}">' +
 			'  <div ng-repeat="i in images">' +
-			'    <img ng-src="{{ i.thumb }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
+			'    <img ng-src="{{ i[config.thumb] }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
 			'  </div>' +
 			'</div>' +
 			'<div class="ng-overlay" ng-show="opened">' +
@@ -47,7 +47,7 @@
 			'  <div class="ng-thumbnails-wrapper">' +
 			'    <div class="ng-thumbnails slide-left">' +
 			'      <div ng-repeat="i in images">' +
-			'        <img ng-src="{{ i.thumb }}" ng-class="{\'active\': index === $index}" ng-click="changeImage($index)" />' +
+			'        <img ng-src="{{ i[config.thumb] }}" ng-class="{\'active\': index === $index}" ng-click="changeImage($index)" />' +
 			'      </div>' +
 			'    </div>' +
 			'  </div>' +
@@ -58,7 +58,8 @@
 			restrict: 'EA',
 			scope: {
 				images: '=',
-				thumbsNum: '@'
+				thumbsNum: '@',
+				config:'='
 			},
 			templateUrl: function (element, attrs) {
 				return attrs.templateUrl || defaults.templateUrl;
@@ -96,7 +97,7 @@
 						deferred.reject();
 					};
 
-					image.src = scope.images[i].img;
+					image.src = scope.images[i][scope.config.img];
 					scope.loading = true;
 
 					return deferred.promise;

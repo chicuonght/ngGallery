@@ -12,22 +12,23 @@ Install
 
 #### With bower:
 
-    $ bower install ngGallery
+    $ bower install md1world_gallery
 
 #### Example Configuration
 
 #### app.js
 ```js
-angular.module('app', ['jkuri.gallery']).
+angular.module('app', ['md1world.gallery']).
   controller('Ctrl', function($scope, $document) {
     self.images = [
       {thumb: 'images/thumbs/1.jpg', img: 'images/1.jpg'},
-		  {thumb: 'images/thumbs/2.jpg', img: 'images/2.jpg'},
-		  {thumb: 'images/thumbs/3.jpg', img: 'images/3.jpg'},
-		  {thumb: 'images/thumbs/4.jpg', img: 'images/4.jpg'},
-		  {thumb: 'images/thumbs/5.jpg', img: 'images/5.jpg'},
-		  {thumb: 'images/thumbs/6.jpg', img: 'images/6.jpg'}
+      {thumb: 'images/thumbs/2.jpg', img: 'images/2.jpg'},
+      {thumb: 'images/thumbs/3.jpg', img: 'images/3.jpg'},
+      {thumb: 'images/thumbs/4.jpg', img: 'images/4.jpg'},
+      {thumb: 'images/thumbs/5.jpg', img: 'images/5.jpg'},
+      {thumb: 'images/thumbs/6.jpg', img: 'images/6.jpg'}
     ];
+    //Images array can be an array object with so many key and value
   }
 );
 ```
@@ -43,7 +44,7 @@ angular.module('app', ['jkuri.gallery']).
 <body ng-controller="Ctrl as ctrl">
 
 <div class="content">
-	<ng-gallery images="ctrl.images"></ng-gallery>
+	<ng-gallery images="ctrl.images" config="thumb: yourThumbKey, img : yourImageKey"></ng-gallery>
 </div>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
