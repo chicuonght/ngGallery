@@ -1,9 +1,9 @@
 {
   "name": "ngGallery",
-  "version": "0.0.1",
-  "homepage": "https://github.com/jkuri/ngGallery",
+  "version": "0.0.2",
+  "homepage": "md1world.com",
   "authors": [
-    "Jan Kuri <jkuri88@gmail.com>"
+    "chicuonght <chicuonght@gmail.com>"
   ],
   "description": "AngularJS Photo Gallery Directive",
   "main": [
