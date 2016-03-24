@@ -204,7 +204,6 @@
 						$thumbwrapper[0].scrollLeft = i * item_scroll - (s * item_scroll);
 					}, 100);
 				};
-
 			}
 		};
 	}
